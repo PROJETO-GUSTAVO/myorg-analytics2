@@ -1,27 +1,27 @@
-terraform {
-  required_providers {
-    azurerm = {
-      source = "hashicorp/azurerm"
-      version = "3.116.0"
-    }
-    azuread = {
-      source = "hashicorp/azuread"
-      version = "2.30.0"
-    }
-  }
-  backend "azurerm" {
-    key = "terraform.tfstate"
-    use_oidc = true
-  }
-}
+# terraform {
+#   required_providers {
+#     azurerm = {
+#       source = "hashicorp/azurerm"
+#       version = "3.116.0"
+#     }
+#     azuread = {
+#       source = "hashicorp/azuread"
+#       version = "2.30.0"
+#     }
+#   }
+#   backend "azurerm" {
+#     key = "terraform.tfstate"
+#     use_oidc = true
+#   }
+# }
 
-provider "azurerm" {
-  use_oidc = true
-  skip_provider_registration = true
-  features {}
-}
+# provider "azurerm" {
+#   use_oidc = true
+#   skip_provider_registration = true
+#   features {}
+# }
 
-provider "azuread" {
-}
+# provider "azuread" {
+# }
 
-data "azurerm_client_config" "current" {}
+# data "azurerm_client_config" "current" {}
