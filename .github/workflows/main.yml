@@ -121,15 +121,15 @@ jobs:
     - name: Terraform Apply
       run: terraform apply -auto-approve -var "resource_group_name=${{secrets.AZURE_RESOURCE_GROUP_NAME}}"
 
-  deploy-to-test:
+  deploy-to-hml:
     if: github.event_name != 'pull_request'
     needs: deploy-to-dev
     defaults:
       run:
         working-directory: terraform-example-deploy
       
-    name: Deploy to Test
-    environment: test
+    name: Deploy to Hml
+    environment: hml
     runs-on: ubuntu-latest
     env:
       ARM_CLIENT_ID: "${{ secrets.AZURE_CLIENT_ID }}"
@@ -156,7 +156,7 @@ jobs:
 
   deploy-to-prod:
     if: github.event_name != 'pull_request'
-    needs: deploy-to-test
+    needs: deploy-to-hml
     defaults:
       run:
         working-directory: terraform-example-deploy
