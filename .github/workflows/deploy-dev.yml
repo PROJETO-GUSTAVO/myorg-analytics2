@@ -1,4 +1,4 @@
-name: Deploy on DEV
+name: Deploy to dev
 on: 
   push:
     branches:
@@ -91,7 +91,7 @@ jobs:
       run:
         working-directory: terraform-kubernetes-deploy
       
-    name: Deploy to Dev
+    name: Deploy to dev
     environment: dev
     runs-on: ubuntu-latest
     env:

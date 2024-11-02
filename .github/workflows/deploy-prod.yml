@@ -1,4 +1,4 @@
-name: Deploy on Prod
+name: Deploy to prod
 on: 
   push:
     branches:
@@ -91,7 +91,7 @@ jobs:
       run:
         working-directory: terraform-kubernetes-deploy
       
-    name: Deploy to Prod
+    name: Deploy to prod
     environment: prod
     runs-on: ubuntu-latest
     env:
